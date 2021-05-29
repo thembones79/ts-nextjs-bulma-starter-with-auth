@@ -16,7 +16,7 @@ interface UsersListProps {
 const UsersList = ({ currentUser }: UsersListProps) => {
   const [usersList, setUsersList] = useState<IUser[]>([]);
   const { doRequest, errorsJSX } = useRequest({
-    url: "/api/v1/users",
+    url: "/users",
     method: "get",
     onSuccess: (list: IUser[]) => setUsersList(list),
   });

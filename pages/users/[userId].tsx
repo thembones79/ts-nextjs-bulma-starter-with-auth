@@ -8,7 +8,6 @@ interface ShowUserProps {
 
 const ShowUser = ({ user }: ShowUserProps) => {
   if (!user) {
-    console.log("Router or server");
     return <h1>User not found</h1>;
   } else {
     const { username, email } = user;

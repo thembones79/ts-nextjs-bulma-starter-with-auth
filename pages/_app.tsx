@@ -1,5 +1,5 @@
 import type { AppProps, AppContext } from "next/app";
-import axios from "axios";
+import { ssrRequest } from "../api/ssr-request";
 import { Header } from "../components/header";
 import { IUser } from "./users";
 import "../styles/bulma.scss";
@@ -22,16 +22,9 @@ function AppComponent({ Component, pageProps, currentUser }: AppWithUser) {
 
 AppComponent.getInitialProps = async (appContext: AppContext) => {
   const { Component, ctx } = appContext;
-
-  const options =
-    typeof window === "undefined"
-      ? { headers: ctx.req?.headers, withCredentials: true }
-      : { withCredentials: true };
-
-  const { data } = await axios.get("/users/currentuser", options);
-
+  const url = "/users/currentuser";
+  const { data } = await ssrRequest(ctx, url);
   let pageProps = {};
-
   const ctxWithUser = { ...ctx, ...data };
 
   if (Component.getInitialProps) {
