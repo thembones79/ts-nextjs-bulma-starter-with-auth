@@ -10,6 +10,7 @@ export const ssrRequest = async (ctx: AppContext["ctx"], url: string) => {
 
   try {
     const { data } = await axios.get(ROOT_URL + url, options);
+
     return { data };
   } catch (error) {
     console.warn(error);
