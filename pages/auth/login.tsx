@@ -24,7 +24,10 @@ const Login = () => {
     <div className="full-page">
       <div className="card max-w-800 m-3">
         <div className="card-content">
-          <form onSubmit={onSubmit}>
+          <form
+            action="https://riverdi-test.herokuapp.com/api/v1/users/login"
+            method="post"
+          >
             <h1 className="title m-3">Log In 🔐</h1>
 
             <div className="field m-3">
@@ -32,6 +35,7 @@ const Login = () => {
               <input
                 className={inputStyle("email")}
                 type="text"
+                name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -42,6 +46,7 @@ const Login = () => {
               <input
                 className={inputStyle("password")}
                 type="password"
+                name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
