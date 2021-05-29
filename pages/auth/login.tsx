@@ -6,7 +6,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { doRequest, errorsJSX, inputStyle } = useRequest({
-    url: "http://localhost:3090/api/v1/users/login",
+    url: "/users/login",
     method: "post",
     body: {
       email,

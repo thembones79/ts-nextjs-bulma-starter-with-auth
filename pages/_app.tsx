@@ -28,10 +28,7 @@ AppComponent.getInitialProps = async (appContext: AppContext) => {
       ? { headers: ctx.req?.headers, withCredentials: true }
       : { withCredentials: true };
 
-  const { data } = await axios.get(
-    "http://localhost:3090/api/v1/users/currentuser",
-    options
-  );
+  const { data } = await axios.get("/users/currentuser", options);
 
   let pageProps = {};
 

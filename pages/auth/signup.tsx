@@ -9,7 +9,7 @@ const Signup: React.FC = () => {
   const [isModalActive, setIsModalActive] = useState(false);
   const [password, setPassword] = useState("");
   const { doRequest, errorsJSX, inputStyle } = useRequest({
-    url: "http://localhost:3090/api/v1/users/signup",
+    url: "/users/signup",
     method: "post",
     body: {
       email,

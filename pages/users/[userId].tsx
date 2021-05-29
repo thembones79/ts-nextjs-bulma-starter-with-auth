@@ -23,8 +23,8 @@ const ShowUser = ({ user }: ShowUserProps) => {
 
 ShowUser.getInitialProps = async (ctx: AppContext["ctx"]) => {
   const { userId } = ctx.query;
-  const route = `/users/${userId}`;
-  const { data } = await ssrRequest(ctx, route);
+  const url = `/users/${userId}`;
+  const { data } = await ssrRequest(ctx, url);
   return { user: data };
 };
 

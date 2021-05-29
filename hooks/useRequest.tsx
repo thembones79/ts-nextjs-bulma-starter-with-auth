@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { ROOT_URL } from "../config";
 
 export const useRequest = ({
   url,
@@ -35,7 +36,7 @@ export const useRequest = ({
   const doRequest = async (props = {}) => {
     try {
       const response = await axios[method](
-        url,
+        ROOT_URL + url,
         {
           ...body,
           ...props,

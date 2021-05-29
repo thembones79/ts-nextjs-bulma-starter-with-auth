@@ -20,7 +20,7 @@ const UsersTable = () => {
   const [emailFilter, setEmailFilter] = useState("");
   const [usernameFilter, setUsernameFilter] = useState("");
   const { doRequest, errorsJSX } = useRequest({
-    url: "http://localhost:3090/api/v1/users",
+    url: "/users",
     method: "get",
     onSuccess: (users: IUser[]) => fetchUsers(users),
   });
