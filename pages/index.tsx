@@ -19,7 +19,7 @@ const Landing = ({ currentUser, version }: LandingProps) => {
 };
 
 Landing.getInitialProps = ({ currentUser }: { currentUser: IUser }) => {
-  return { version: "0.0.1", currentUser };
+  return { version: "0.0.2", currentUser };
 };
 
 export default Landing;
