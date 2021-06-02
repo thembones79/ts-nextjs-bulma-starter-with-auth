@@ -125,7 +125,7 @@ const UsersTable = () => {
 
   const renderTableHeader = () => {
     if (usersTable.length > 0) {
-      const columns = Object.keys(usersTable[0]) as ColumnType[];
+      const columns = ["id", "username", "email"] as ColumnType[];
       return columns.map((column) => {
         return (
           <th key={column} onClick={() => sortTableBy(column)}>
